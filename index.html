@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Pergunta Importante</title>
+<style>
+body{
+font-family: Arial, sans-serif;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+background:#f5f5f5;
+}
+.container{
+background:white;
+padding:30px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+text-align:center;
+width:300px;
+}
+button{
+margin-top:15px;
+padding:10px 20px;
+border:none;
+background:#007bff;
+color:white;
+border-radius:5px;
+cursor:pointer;
+}
+button:hover{
+background:#0056b3;
+}
+#resposta{
+margin-top:20px;
+font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h3>Olá, responda aqui se você quer o Valdo</h3>
+
+<label>
+<input type="radio" name="resposta" value="sim">
+Sim
+</label>
+
+<br>
+
+<label>
+<input type="radio" name="resposta" value="nao">
+Não
+</label>
+
+<br>
+
+<button onclick="enviar()">Enviar</button>
+
+<div id="resposta"></div>
+
+</div>
+
+<script>
+function enviar(){
+
+let escolha = document.querySelector('input[name="resposta"]:checked');
+
+if(!escolha){
+document.getElementById("resposta").innerText="Selecione uma opção.";
+return;
+}
+
+if(escolha.value==="sim"){
+document.getElementById("resposta").innerText="Boa escolha. Valdo também quer você ❤️";
+}
+
+if(escolha.value==="nao"){
+document.getElementById("resposta").innerText="Resposta incorreta. Ele ja é seu! Tente novamente 😅";
+}
+
+}
+</script>
+
+</body>
+</html>
